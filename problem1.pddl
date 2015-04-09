@@ -1,12 +1,11 @@
 (define (problem problem2)
   (:domain courier)
   (:objects
-      t1 t2 - Truck
+      t1 - Truck
       p1 p2 p3 p4 - Package
       l1 l2 l3 l4 l5 l6 l7 l8 l9 l10 l11 - Location)
   (:init
   (=(fuel_level t1) 100)
-  (=(fuel_level t2) 100)
 
   (= (fuel-required l1 l2) 2)
   (= (fuel-required l1 l3) 2)
@@ -97,7 +96,6 @@
   (connected l11 l6)
 
   (at-truck t1 l1)
-  (at-truck t2 l10)
 
   (at-Package p1 l3)
   (at-Package p2 l11)
