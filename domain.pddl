@@ -7,7 +7,7 @@
   (loaded ?t - TRUCK ?p - Package)
   (connected ?x ?y - Location))
 
-(:functions (fuel_level ?t - Truck)
+(:functions (fuel_level ?t - Truck)(fuel_used ?t - Truck)
           (fuel-required ?x ?y - Location)
           )
 
@@ -21,6 +21,7 @@
                     ))
     :effect (and  (at start (not(at-truck ?t1 ?from)))
                   (at start (decrease (fuel_level ?t1)(fuel-required ?from ?to)))
+                  (at end (increase (fuel_used ?t1)(fuel-required ?from ?to)))
                   (at end (at-truck ?t1 ?to))
                  ))
 

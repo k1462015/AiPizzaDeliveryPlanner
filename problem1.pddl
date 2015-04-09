@@ -6,6 +6,7 @@
       l1 l2 l3 l4 l5 l6 l7 l8 l9 l10 l11 - Location)
   (:init
   (=(fuel_level t1) 100)
+  (=(fuel_used t1) 0)
 
   (= (fuel-required l1 l2) 2)
   (= (fuel-required l1 l3) 2)
@@ -105,4 +106,5 @@
 (:goal (and (at-Package p1 l6)
             (at-Package p2 l6)
             (at-Package p3 l6)
-            (at-Package p4 l6))))
+            (at-Package p4 l6)))
+(:metric minimize (fuel_used t1)))
