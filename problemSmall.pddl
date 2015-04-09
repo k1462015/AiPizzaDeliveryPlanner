@@ -5,7 +5,7 @@
       p1 p2 p3 p4 - Package
       l1 l2 l3 l4 l5 l6 - Location)
   (:init
-  (=(fuel_level t1) 10)
+  (=(fuel_level t1) 12)
 
   (= (fuel-required l1 l2) 2)
   (= (fuel-required l1 l3) 2)
