@@ -1,5 +1,5 @@
 (define (problem simpleProblem)
-  (:domain pizza-delivery)
+  (:domain pizzaDomain)
   (:objects
       m - motorbike
       p1 p2 p3 p4 - pizza
@@ -37,10 +37,10 @@
   (at-pizza p3 s4)
   (at-pizza p4 s4)
 
-  (delivery-address p1 s6)
-  (delivery-address p2 s3)
-  (delivery-address p3 s1)
-  (delivery-address p4 s7)
+  (address p1 s6)
+  (address p2 s3)
+  (address p3 s1)
+  (address p4 s7)
   )
 
   (:goal (and

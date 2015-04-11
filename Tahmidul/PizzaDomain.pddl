@@ -1,4 +1,4 @@
-(define (domain pizza-delivery)
+(define (domain PizzaDomain)
 (:requirements :typing :fluents)
 (:types motorbike pizza street)
 (:predicates
@@ -6,7 +6,7 @@
   (pizza-baked ?p - pizza)
   (at-pizza ?p - pizza ?l - street)
   (pizza-loaded ?p - pizza ?m - motorbike)
-  (delivery-Address ?p - pizza ?s - street)
+  (address ?p - pizza ?s - street)
   (pizza-delivered ?p - pizza)
   (street-linked ?x ?y - street))
 
@@ -27,7 +27,7 @@
 
 (:action deliver-pizza
     :parameters (?m - motorbike ?s - street ?p - pizza)
-    :precondition (and (delivery-Address ?p ?s)
+    :precondition (and (address ?p ?s)
                         (at-motorbike ?m ?s)
                         (pizza-loaded ?p ?m))
     :effect (and  (not(pizza-loaded ?p ?m))
