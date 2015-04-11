@@ -1,0 +1,1 @@
+java -classpath :/Users/tahmidulislam/Desktop/ javaff.JavaFF pizzadomain.pddl simpleProblem.pddl
