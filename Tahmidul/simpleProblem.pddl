@@ -33,6 +33,7 @@
 
   (at-motorbike m s2)
   (= (fuel_level m) 58)
+  (= (fuel_used m) 0)
 
   (at-pizza p1 s4)
   (at-pizza p2 s4)
@@ -49,4 +50,6 @@
               (pizza-delivered p1)
               (pizza-delivered p2)
               (pizza-delivered p3)
-              (pizza-delivered p4))))
+              (pizza-delivered p4)))
+
+  (:metric minimize (fuel_used m)))
