@@ -10,11 +10,16 @@
   (pizza-delivered ?p - pizza)
   (street-linked ?x ?y - street))
 
+(:functions (fuel_level ?m - motorbike)(fuel-required ?s1 ?s2 - street))
+
 (:action drive
     :parameters (?m - motorbike ?from ?to - street)
     :precondition (and (street-linked ?from ?to)
-                       (at-motorbike ?m ?from))
+                       (at-motorbike ?m ?from)
+                       (>= (fuel_level ?m) (fuel-required ?from ?to) )
+                       )
     :effect (and (not (at-motorbike ?m ?from))
+                 (decrease (fuel_level ?m)(fuel-required ?from ?to))
                  (at-motorbike ?m ?to)))
 
 (:action pickup-pizza
