@@ -1,7 +1,7 @@
 (define (problem simpleProblem)
   (:domain pizzaDomain)
   (:objects
-      m - motorbike
+      motorbike car - vehicle
       p1 p2 p3 p4 - pizza
       s1 s2 s3 s4 s5 s6 s7 s8 - street)
   (:init
@@ -31,9 +31,15 @@
   (street-linked s8 s7) (= (fuel-required s8 s7) 8)
 
 
-  (at-motorbike m s2)
-  (= (fuel_level m) 58)
-  (= (fuel_used m) 0)
+  (at-vehicle motorbike s2)
+  (= (fuel_level motorbike) 60)
+  (= (fuel_used motorbike) 0)
+  (= (fuel_wasted motorbike) 2)
+
+  (at-vehicle car s4)
+  (= (fuel_level car) 60)
+  (= (fuel_used car) 0)
+  (= (fuel_wasted car) 5)
 
   (at-pizza p1 s4)
   (at-pizza p2 s4)
@@ -52,4 +58,4 @@
               (pizza-delivered p3)
               (pizza-delivered p4)))
 
-  (:metric minimize (fuel_used m)))
+  (:metric minimize (fuel_used motorbike)))
