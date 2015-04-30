@@ -1,0 +1,70 @@
+(define (domain PizzaDomain)
+(:requirements :strips :typing :fluents :durative-actions)
+(:types vehicle pizza street fuel_Pump)
+(:predicates
+  (at-vehicle ?v - vehicle ?s - street)
+  (fuelPump_Location ?p - fuel_Pump ?s - street)
+  (pizza-baked ?p - pizza)
+  (at-pizza ?p - pizza ?l - street)
+  (pizza-loaded ?p - pizza ?v - vehicle)
+  (address ?p - pizza ?s - street)
+  (pizza-delivered ?p - pizza)
+  (street-linked ?x ?y - street))
+
+(:functions (fuel_level ?v - vehicle)
+            (fuel-required ?s1 ?s2 - street)
+            (fuel_used ?v - vehicle)
+            (fuel_wasted ?v - vehicle))
+
+(:durative-action drive
+    :parameters (?v - vehicle ?from ?to - street)
+    :duration (= ?duration (fuel-required ?from ?to))
+    :condition (and (at start (street-linked ?from ?to))
+                       (at start (at-vehicle ?v ?from))
+                       (at start (>= (fuel_level ?v) (fuel-required ?from ?to)))
+                       )
+    :effect (and (at start (not (at-vehicle ?v ?from)))
+                 (at end (decrease (fuel_level ?v)(+ (fuel-required ?from ?to)(fuel_wasted ?v))))
+                 (at end (increase (fuel_used ?v) (+ (fuel-required ?from ?to)(fuel_wasted ?v))))
+                 (at end (at-vehicle ?v ?to))))
+
+(:durative-action load-pizza
+    :parameters (?v - vehicle ?s - street ?p - pizza)
+    :duration (= ?duration 2)
+    :condition (and (at start (pizza-baked ?p))
+                        (at start (at-vehicle ?v ?s))
+                        (at start (at-pizza ?p ?s)))
+    :effect (and  (at start (not(at-pizza ?p ?s)))
+                  (at end (pizza-loaded ?p ?v))))
+
+(:durative-action deliver-pizza
+    :parameters (?v - vehicle ?s - street ?p - pizza)
+    :duration (= ?duration 3)
+    :condition (and (at start (address ?p ?s))
+                    (at start (at-vehicle ?v ?s))
+                    (at start (pizza-loaded ?p ?v)))
+    :effect (and  (at start (not(pizza-loaded ?p ?v)))
+                  (at end (pizza-delivered ?p))))
+
+(:durative-action swap-vehicle
+    :parameters (?v1 ?v2 - vehicle ?s - street ?p - pizza)
+    :duration (= ?duration 5)
+    :condition (and (at start (at-vehicle ?v1 ?s))
+                    (at start (at-vehicle ?v2 ?s))
+                    (at start (pizza-loaded ?p ?v1)))
+    :effect (and  (at start (not(pizza-loaded ?p ?v1)))
+                  (at end (pizza-loaded ?p ?v2))
+                  ))
+(:durative-action refuel
+    :parameters (?v - vehicle ?f - fuel_Pump ?s - street)
+    :duration (= ?duration 10)
+    :condition (and (at start (at-vehicle ?v ?s))
+                    (at end (fuelPump_location ?f ?s)))
+    :effect (and (at end (increase (fuel_level ?v) 10))))
+
+(:durative-action bake-pizza
+    :parameters (?v - vehicle ?p - pizza ?s - street)
+    :duration (= ?duration 4)
+    :condition (and (at start (at-vehicle ?v ?s))
+                    (at start (at-pizza ?p ?s)))
+    :effect (at end (pizza-baked ?p))))
