@@ -2,7 +2,7 @@
   (:domain pizzaDomain)
   (:objects
       motorbike car - vehicle
-      p1 p2- pizza
+      p1 p2 - pizza
       s1 s2 s3 s4 s5 s6 - street)
   (:init
   (street-linked s1 s2) (= (fuel-required s1 s2) 5)
@@ -24,6 +24,7 @@
 
   (street-linked s5 s2) (= (fuel-required s5 s2) 9)
   (street-linked s5 s4) (= (fuel-required s5 s4) 6)
+  (street-linked s5 s6) (= (fuel-required s5 s4) 9)
 
   (street-linked s6 s1) (= (fuel-required s6 s1) 14)
   (street-linked s6 s2) (= (fuel-required s6 s2) 8)
@@ -53,3 +54,4 @@
               (pizza-delivered p2)))
 
   (:metric minimize (fuel_used motorbike)))
+
