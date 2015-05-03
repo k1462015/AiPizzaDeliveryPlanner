@@ -3,7 +3,8 @@
   (:objects
       motorbike car - vehicle
       p1 p2 p3 p4 p5 p6 - pizza
-      s1 s2 s3 s4 s5 s6 s7 s8 - street)
+      s1 s2 s3 s4 s5 s6 s7 s8 - street
+      fp1 fp2 - fuel_pump)
   (:init
   (street-linked s1 s2) (= (fuel-required s1 s2) 5)
   (street-linked s1 s3) (= (fuel-required s1 s3) 7)
@@ -45,6 +46,9 @@
   (street-linked s8 s3) (= (fuel-required s8 s3) 10)
   (street-linked s8 s6) (= (fuel-required s8 s6) 6)
   (street-linked s8 s7) (= (fuel-required s8 s7) 8)
+
+  (fuelPump_Location fp1 s3)
+  (fuelPump_Location fp2 s5)
 
 
   (at-vehicle motorbike s2)
