@@ -70,12 +70,12 @@
   (street-linked s10 s7) (= (fuel-required s10 s7) 6)
 
   (at-vehicle motorbike s8)
-  (= (fuel_level motorbike) 30)
+  (= (fuel_level motorbike) 70)
   (= (fuel_used motorbike) 0)
   (= (fuel_wasted motorbike) 2)
 
   (at-vehicle car s1)
-  (= (fuel_level car) 60)
+  (= (fuel_level car) 70)
   (= (fuel_used car) 0)
   (= (fuel_wasted car) 5)
 
@@ -110,4 +110,3 @@
               (pizza-delivered p8)))
 
   (:metric minimize (fuel_used motorbike)))
-

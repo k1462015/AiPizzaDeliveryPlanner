@@ -26,7 +26,6 @@
   (street-linked s4 s2) (= (fuel-required s4 s2) 6)
   (street-linked s4 s3) (= (fuel-required s4 s3) 7)
   (street-linked s4 s5) (= (fuel-required s4 s5) 6)
-  (street-linked s4 s6) (= (fuel-required s4 s6) 5)
 
   (street-linked s5 s3) (= (fuel-required s5 s3) 4)
   (street-linked s5 s4) (= (fuel-required s5 s4) 6)
@@ -35,7 +34,6 @@
 
   (street-linked s6 s1) (= (fuel-required s6 s1) 12)
   (street-linked s6 s3) (= (fuel-required s6 s3) 11)
-  (street-linked s6 s4) (= (fuel-required s6 s4) 5)
   (street-linked s6 s5) (= (fuel-required s6 s5) 10)
   (street-linked s6 s8) (= (fuel-required s6 s8) 6)
 
@@ -50,12 +48,12 @@
 
 
   (at-vehicle motorbike s2)
-  (= (fuel_level motorbike) 30)
+  (= (fuel_level motorbike) 40)
   (= (fuel_used motorbike) 0)
   (= (fuel_wasted motorbike) 2)
 
   (at-vehicle car s1)
-  (= (fuel_level car) 60)
+  (= (fuel_level car) 50)
   (= (fuel_used car) 0)
   (= (fuel_wasted car) 5)
 
