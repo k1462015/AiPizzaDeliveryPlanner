@@ -3,7 +3,7 @@
   (:objects
       motorbike car - vehicle
       p1 p2 - pizza
-      s1 s2 s3 s4 s5 s6 - street
+      s1 s2 s3 s4 s5 s6 s7 - street
       fp1 fp2 - fuel_pump)
   (:init
   (street-linked s1 s2) (= (fuel-required s1 s2) 5)

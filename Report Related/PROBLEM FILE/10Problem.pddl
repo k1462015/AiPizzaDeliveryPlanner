@@ -74,12 +74,12 @@
   (fuelPump_Location fp2 s10)
 
   (at-vehicle motorbike s8)
-  (= (fuel_level motorbike) 70)
+  (= (fuel_level motorbike) 30)
   (= (fuel_used motorbike) 0)
   (= (fuel_wasted motorbike) 2)
 
   (at-vehicle car s1)
-  (= (fuel_level car) 70)
+  (= (fuel_level car) 30)
   (= (fuel_used car) 0)
   (= (fuel_wasted car) 5)
 
@@ -113,4 +113,4 @@
               (pizza-delivered p7)
               (pizza-delivered p8)))
 
-  (:metric minimize (fuel_used motorbike)))
+  (:metric minimize (fuel_used car)))

@@ -52,12 +52,12 @@
 
 
   (at-vehicle motorbike s2)
-  (= (fuel_level motorbike) 40)
+  (= (fuel_level motorbike) 30)
   (= (fuel_used motorbike) 0)
   (= (fuel_wasted motorbike) 2)
 
   (at-vehicle car s1)
-  (= (fuel_level car) 50)
+  (= (fuel_level car) 30)
   (= (fuel_used car) 0)
   (= (fuel_wasted car) 5)
 
@@ -84,4 +84,4 @@
               (pizza-delivered p5)
               (pizza-delivered p6)))
 
-  (:metric minimize (fuel_used motorbike)))
+  (:metric minimize (fuel_used car)))

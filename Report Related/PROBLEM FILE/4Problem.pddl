@@ -9,7 +9,7 @@
   (street-linked s1 s2) (= (fuel-required s1 s2) 6)
   (street-linked s1 s3) (= (fuel-required s1 s3) 3)
   (street-linked s1 s4) (= (fuel-required s1 s4) 12)
-  
+
 
   (street-linked s2 s1) (= (fuel-required s2 s1) 6)
   (street-linked s2 s3) (= (fuel-required s2 s3) 10)
@@ -30,7 +30,7 @@
   (= (fuel_wasted motorbike) 2)
 
   (at-vehicle car s1)
-  (= (fuel_level car) 60)
+  (= (fuel_level car) 30)
   (= (fuel_used car) 0)
   (= (fuel_wasted car) 5)
 
@@ -46,4 +46,4 @@
               (pizza-delivered p1)
               (pizza-delivered p2)))
 
-  (:metric minimize (fuel_used motorbike)))
+  (:metric minimize (fuel_used car)))
