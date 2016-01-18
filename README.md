@@ -2,10 +2,10 @@
 ## Introduction to Artificial Intelligence - 4CCS1IAI. ##
 The coursework is about the use of the existing planners for solving a domain and a number of instances of your choice. 
 This requires:
-* Coming up with an interesting planning domain and instances,
-* Modelling the domain and the instances in PDDL, 
-* Using a planner for solving them, analysing the results;
-* Writing a report about the work done. 
+* Coming up with an interesting planning domain and instances
+* Modelling the domain and the instances in PDDL
+* Using a planner for solving them, analysing the results
+* Writing a report about the work done
 
 The evaluation will take into account: how rich is the domain (e.g., a domain that involves
 just one type of action for moving from one place to another is not interesting), how appropriate
