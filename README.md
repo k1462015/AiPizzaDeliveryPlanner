@@ -18,3 +18,5 @@ but in this case you have to clearly state how you modified and extended the dom
 
 ### Project Overview ###
 The purpose of our domain and problem files is to allow the user to plan a route for delivering a set number of pizzas to locations in the most efficient way possible, whilst taking into account time, fuel and the fact that there may be more than one possible vehicle transporting the pizza, and therefore our plan allows us to make efficient use of this fact.
+
+<img src="https://i.gyazo.com/60f9dab4f5c99076c51d507ec7791389.gif" height="300px" width="700px"/>
